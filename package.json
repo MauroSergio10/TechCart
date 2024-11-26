@@ -1,0 +1,12 @@
+{
+  "name": "techcart",
+  "version": "1.0.0",
+"scripts": {
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "cd backend && npx ts-node src/server.ts",
+    "start-frontend": "cd frontend && npm start"
+},
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
