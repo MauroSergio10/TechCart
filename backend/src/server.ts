@@ -4,9 +4,19 @@ import productsRouter from "./routes/products";
 import cartRouter from "./routes/cart";
 import checkoutRouter from "./routes/checkout";
 import feedbackRouter from "./routes/feedback";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const PORT = 3000;
+
+// Configurar o CORS
+app.use(
+    cors({
+        origin: "http://localhost:3001", // URL do frontend
+        methods: ["GET", "POST", "PUT", "DELETE"],
+    }),
+);
 
 app.use(bodyParser.json());
 
